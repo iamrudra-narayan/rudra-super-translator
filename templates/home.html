@@ -1,0 +1,103 @@
+{% extends 'layout.html' %}
+{% block title %}Translator Page{% endblock %}
+{% block content %}
+<div class="container">
+    <div class="head-nav"><h3 style="font-size:10px; color:yellow; font-weight:bold; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Disclaimer :- Plesae Click on the three dot and click "Add to Home screen" for better view and quick access</h3></div>
+<div class="logo-heading">
+    <img src="{{url_for('static', filename='img/logo.png')}}" alt="Super TransLator">
+    <div class="sm">
+    <a href="https://wa.me/9090843994" class="nav__link">
+        <i class="material-icons nav__icon">whatsapp</i>
+      </a>
+      <a href="https://www.facebook.com/WDFD.Developer/?" class="nav__link">
+        <i class="material-icons nav__icon">facebook</i>
+      </a>
+    </div>
+</div>   
+    <div class="container-data">
+    <form method="POST" action="/">
+    <input type="text" class="text" name="sentence" placeholder="Enter or Paste sentences"><br>
+    <select class="teamForm" id="teamDropdownSelector" type="text" name="inputvalue" placeholder="Select A Language">
+        <option disabled selected>Select a Language</option>
+        <option id="WatfordVSManchester Utd" value="hi">Hindi</option>
+        <option id="WatfordVSManchester Utd" value="en">English</option>
+        <option id="WatfordVSManchester Utd" value="te">Telugu</option>
+        <option id="WatfordVSManchester Utd" value="ta">Tamil</option>
+        <option id="WatfordVSManchester Utd" value="tr">Turkish</option>
+        <option id="WatfordVSManchester Utd" value="pa">Panjabi</option>
+        <option id="WatfordVSManchester Utd" value="ur">Urdu</option>
+        <option id="WatfordVSManchester Utd" value="or">Odia</option>
+        <option id="WatfordVSManchester Utd" value="ml">Malayalam</option>
+        <option id="WatfordVSManchester Utd" value="mr">Marathi</option>
+        <option id="WatfordVSManchester Utd" value="ne">Nepali</option>
+        <option id="WatfordVSManchester Utd" value="fr">French</option>
+        <option id="WatfordVSManchester Utd" value="zh-cn">Chinese (Simplified)</option> 
+        <option id="WatfordVSManchester Utd" value="zh-tw">Chinese (Traditional)</option>
+        <option id="WatfordVSManchester Utd" value="de">German</option>
+        <option id="WatfordVSManchester Utd" value="it">Italian</option>
+        <option id="WatfordVSManchester Utd" value="ja">Japanese</option>
+        <option id="WatfordVSManchester Utd" value="ko">Korean</option>
+        <option id="WatfordVSManchester Utd" value="la">Latin</option>
+        <option id="WatfordVSManchester Utd" value="pt">Portuguese</option>
+        <option id="WatfordVSManchester Utd" value="ro">Romanian</option>
+        <option id="WatfordVSManchester Utd" value="ru">Russian</option>
+        <option id="WatfordVSManchester Utd" value="es">Spanish</option>
+        
+    </select>
+    <br>
+        <button type="submit" class="btn btn-primary">TRANSLATE</button>
+    </form>
+    </div>
+    {% if output %}
+    <div class="sentence">
+    <h2>{{sentence}}</h2>
+    </div>
+    <h2 style="text-align:center; font-size:20px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color:blue;margin-top:30px;"> Translated Sentences </h2>
+    <div class="output">
+        <h2>{{output}}</h2>
+        </div>
+    {% else %}
+    <div class="sentence">
+        <h2>Please Enter or Paste Text or Sentences.
+            The Translated Sentences will be shown here.
+        </h2>
+        </div>
+    {% endif %}
+    <div class="sentence"><h1 style="font-size:15px; color:red; font-weight:bold; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">!!!...More Languages will be added Soon...!!!</h1></div>
+    <br>
+    <div class="sentence"><h1 style="font-size:23px; color:Green; font-weight:bold; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">OUR SPONSORSHIP</h1></div>
+    <div class="container-posters">
+    <div class="sp-poster">
+        <img src="{{url_for('static', filename='img/logo-poster.jpg')}}">
+    </div>
+    <div class="sp-poster">
+        <img src="{{url_for('static', filename='img/sp-1.jpg')}}">
+    </div>
+    <div class="sp-poster">
+        <img src="{{url_for('static', filename='img/sp-2.png')}}">
+    </div>
+    <div class="sp-poster">
+        <img src="{{url_for('static', filename='img/sp-3.png')}}">
+    </div>
+    </div>
+    <div class="sentence"><h1 style="font-size:25px; color:Green; font-weight:bold; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">CONTACT US</h1></div>
+    <div class="container-contact">
+        <form  action="/contact" method="POST">
+            <h3><b>Contact us</b></h3><br>
+            <p>Do you have any questions? Please do not hesitate to contact us directly.</p>
+             <p> Our team will come back to you within a matter of hours to help you.</p>
+            
+            <br>
+            <input type="text" name="name" id="name" placeholder="Your Name" class="form-control"><br>
+            <input type="text" name="email" id="email" placeholder="Your Email" class="form-control"><br>
+            <input type="text" name="subject" id="subject" placeholder="Subject" class="form-control"><br>
+            <input type="text" name="message" id="message" placeholder="Your Messages" class="msg"><br>
+            <div class="container-login-btn">
+            <a class="btn-login"><button>Send</button></a>
+           </div>
+        </form>
+   
+</div>
+<div class="head"><h2> Copyright &copy; Super Translator 2021</h2></div> 
+</div>  
+{% endblock %}
